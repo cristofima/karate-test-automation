@@ -1,0 +1,577 @@
+{
+	"info": {
+		"_postman_id": "c3e938a3-c6fc-4df7-af24-f123699e252f",
+		"name": "Marvel Characters API",
+		"description": "Colección de pruebas para la API REST de personajes de Marvel, incluyendo casos exitosos, validaciones y errores de nombre duplicado. Ahora con username en la ruta.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35326344"
+	},
+	"item": [
+		{
+			"name": "Obtener todos los personajes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://bp-se-test-cabcd9b246a5.herokuapp.com/{{USERNAME}}/api/characters",
+					"protocol": "http",
+					"host": [
+						"bp-se-test-cabcd9b246a5",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"{{USERNAME}}",
+						"api",
+						"characters"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK - Lista vacía",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": "[]"
+				},
+				{
+					"name": "200 OK - Todos los personajes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://bp-se-test-cabcd9b246a5.herokuapp.com/testuser/api/characters",
+							"protocol": "http",
+							"host": [
+								"bp-se-test-cabcd9b246a5",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"testuser",
+								"api",
+								"characters"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1750430568&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&s=tgcx6kbSy6mlosnJ%2BMWQ%2Bm%2BxlMO6zOKiRfEkjUyspNs%3D\"}]}"
+						},
+						{
+							"key": "Reporting-Endpoints",
+							"value": "heroku-nel=https://nel.heroku.com/reports?ts=1750430568&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&s=tgcx6kbSy6mlosnJ%2BMWQ%2Bm%2BxlMO6zOKiRfEkjUyspNs%3D"
+						},
+						{
+							"key": "Nel",
+							"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jun 2025 14:42:48 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						},
+						{
+							"key": "Server-Timing",
+							"value": "cfReqDur;dur=328.674"
+						},
+						{
+							"key": "Cf-Team",
+							"value": "282f63e818000082556af4d400000001"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 4,\n        \"name\": \"Character with many powers\",\n        \"alterego\": \"Many Powers Alter\",\n        \"description\": \"Personaje con muchos poderes\",\n        \"powers\": [\n            \"Poder 1\",\n            \"Poder 2\",\n            \"Poder 3\",\n            \"Poder 4\",\n            \"Poder 5\",\n            \"Poder 6\",\n            \"Poder 7\",\n            \"Poder 8\",\n            \"Poder 9\",\n            \"Poder 10\"\n        ]\n    },\n    {\n        \"id\": 8,\n        \"name\": \"'; DROP TABLE characters; --\",\n        \"alterego\": \"SQL Injection Test\",\n        \"description\": \"Test de seguridad\",\n        \"powers\": [\n            \"SQL Power\"\n        ]\n    },\n    {\n        \"id\": 14,\n        \"name\": \"Spider-Man Test AAA\",\n        \"alterego\": \"Peter Parker AA\",\n        \"description\": \"Superhéroe arácnido de Marvel para testing\",\n        \"powers\": [\n            \"Agilidad\",\n            \"Sentido arácnido\",\n            \"Trepar muros\"\n        ]\n    },\n    {\n        \"id\": 16,\n        \"name\": \"Batman\",\n        \"alterego\": \"Bruce Wayne\",\n        \"description\": \"Genius billionaire\",\n        \"powers\": [\n            \"Strong\",\n            \"Force\"\n        ]\n    },\n    {\n        \"id\": 27,\n        \"name\": \"Valid Character-1750394549392\",\n        \"alterego\": \"Valid Alter\",\n        \"description\": \"Valid description\",\n        \"powers\": [\n            \"Power1\",\n            \"Power2\"\n        ]\n    },\n    {\n        \"id\": 28,\n        \"name\": \"Test Special-1750394550905\",\n        \"alterego\": \"Special Alter\",\n        \"description\": \"Description with symbols\",\n        \"powers\": [\n            \"Power1\",\n            \"Power2\"\n        ]\n    },\n    {\n        \"id\": 29,\n        \"name\": \"Special Test #(timestamp)\",\n        \"alterego\": \"Alter Ego Test\",\n        \"description\": \"Descripción con acentos: áéíóú\",\n        \"powers\": [\n            \"Power Español\",\n            \"Power Test\"\n        ]\n    },\n    {\n        \"id\": 30,\n        \"name\": \"Valid Character-1750394648357\",\n        \"alterego\": \"Valid Alter\",\n        \"description\": \"Valid description\",\n        \"powers\": [\n            \"Power1\",\n            \"Power2\"\n        ]\n    },\n    {\n        \"id\": 31,\n        \"name\": \"Test Special-1750394649920\",\n        \"alterego\": \"Special Alter\",\n        \"description\": \"Description with symbols\",\n        \"powers\": [\n            \"Power1\",\n            \"Power2\"\n        ]\n    },\n    {\n        \"id\": 32,\n        \"name\": \"Iron Man\",\n        \"alterego\": \"Tony Stark M\",\n        \"description\": \"Updated description\",\n        \"powers\": [\n            \"Armor\",\n            \"Flight\"\n        ]\n    },\n    {\n        \"id\": 33,\n        \"name\": \"Test Special-1750394698980\",\n        \"alterego\": \"Special Alter\",\n        \"description\": \"Description with symbols\",\n        \"powers\": [\n            \"Power1\",\n            \"Power2\"\n        ]\n    },\n    {\n        \"id\": 34,\n        \"name\": \"Valid Character-1750394792389\",\n        \"alterego\": \"Valid Alter\",\n        \"description\": \"Valid description\",\n        \"powers\": [\n            \"Power1\",\n            \"Power2\"\n        ]\n    },\n    {\n        \"id\": 35,\n        \"name\": \"Test Special-1750394793916\",\n        \"alterego\": \"Special Alter\",\n        \"description\": \"Description with symbols\",\n        \"powers\": [\n            \"Power1\",\n            \"Power2\"\n        ]\n    },\n    {\n        \"id\": 36,\n        \"name\": \"Valid Character-1750394826921\",\n        \"alterego\": \"Valid Alter\",\n        \"description\": \"Valid description\",\n        \"powers\": [\n            \"Power1\",\n            \"Power2\"\n        ]\n    },\n    {\n        \"id\": 37,\n        \"name\": \"Test Special-1750394828328\",\n        \"alterego\": \"Special Alter\",\n        \"description\": \"Description with symbols\",\n        \"powers\": [\n            \"Power1\",\n            \"Power2\"\n        ]\n    },\n    {\n        \"id\": 38,\n        \"name\": \"Valid Character-1750394870213\",\n        \"alterego\": \"Valid Alter\",\n        \"description\": \"Valid description\",\n        \"powers\": [\n            \"Power1\",\n            \"Power2\"\n        ]\n    },\n    {\n        \"id\": 39,\n        \"name\": \"Test Special-1750394871627\",\n        \"alterego\": \"Special Alter\",\n        \"description\": \"Description with symbols\",\n        \"powers\": [\n            \"Power1\",\n            \"Power2\"\n        ]\n    },\n    {\n        \"id\": 41,\n        \"name\": \"Spider Man\",\n        \"alterego\": \"Peter Parker\",\n        \"description\": \"student\",\n        \"powers\": [\n            \"Flight\"\n        ]\n    },\n    {\n        \"id\": 42,\n        \"name\": \"Iron Man\",\n        \"alterego\": \"Otro\",\n        \"description\": \"Otro\",\n        \"powers\": [\n            \"Armor\"\n        ]\n    },\n    {\n        \"id\": 44,\n        \"name\": \"Iron Man2\",\n        \"alterego\": \"Tony Stark\",\n        \"description\": \"Genius billionaire\",\n        \"powers\": [\n            \"Armor\",\n            \"Flight\"\n        ]\n    },\n    {\n        \"id\": 45,\n        \"name\": \"Test\",\n        \"alterego\": \"Tony Stark\",\n        \"description\": \"Genius billionaire\",\n        \"powers\": [\n            \"Armor\",\n            \"Flight\"\n        ]\n    },\n    {\n        \"id\": 46,\n        \"name\": \"Iron Man23\",\n        \"alterego\": \"Tony Stark\",\n        \"description\": \"Genius billionaire\",\n        \"powers\": [\n            \"Armor\",\n            \"Flight\"\n        ]\n    },\n    {\n        \"id\": 47,\n        \"name\": \"SY\",\n        \"alterego\": \"SYS\",\n        \"description\": \"Genio, millonario, playboy, filántropo\",\n        \"powers\": [\n            \"Armadura\",\n            \"Inteligencia\"\n        ]\n    },\n    {\n        \"id\": 48,\n        \"name\": \"Iron Man1\",\n        \"alterego\": \"Tony Stark\",\n        \"description\": \"Genius billionaire\",\n        \"powers\": [\n            \"Armor\",\n            \"Flight\"\n        ]\n    },\n    {\n        \"id\": 49,\n        \"name\": \"Iron Man3\",\n        \"alterego\": \"Otro\",\n        \"description\": \"Otro\",\n        \"powers\": [\n            \"Armor\"\n        ]\n    },\n    {\n        \"id\": 50,\n        \"name\": \"Eve\",\n        \"alterego\": \"otro\",\n        \"description\": \"otro\",\n        \"powers\": [\n            \"jdjdjd\"\n        ]\n    },\n    {\n        \"id\": 51,\n        \"name\": \"Spider-Man\",\n        \"alterego\": \"Peter Parker\",\n        \"description\": \"Superhéroe arácnido de Marvel\",\n        \"powers\": [\n            \"Agilidad\",\n            \"Sentido arácnido\",\n            \"Trepar muros\"\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener personaje por ID (exitoso)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://bp-se-test-cabcd9b246a5.herokuapp.com/{{USERNAME}}/api/characters/1",
+					"protocol": "http",
+					"host": [
+						"bp-se-test-cabcd9b246a5",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"{{USERNAME}}",
+						"api",
+						"characters",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Iron Man\",\n    \"alterego\": \"Tony Stark\",\n    \"description\": \"Genius billionaire\",\n    \"powers\": [\n        \"Armor\",\n        \"Flight\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener personaje por ID (no existe)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://bp-se-test-cabcd9b246a5.herokuapp.com/{{USERNAME}}/api/characters/999",
+					"protocol": "http",
+					"host": [
+						"bp-se-test-cabcd9b246a5",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"{{USERNAME}}",
+						"api",
+						"characters",
+						"999"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "404 Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Character not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear personaje (exitoso)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Iron Man\",\n  \"alterego\": \"Tony Stark\",\n  \"description\": \"Genius billionaire\",\n  \"powers\": [\"Armor\", \"Flight\"]\n}"
+				},
+				"url": {
+					"raw": "http://bp-se-test-cabcd9b246a5.herokuapp.com/{{USERNAME}}/api/characters",
+					"protocol": "http",
+					"host": [
+						"bp-se-test-cabcd9b246a5",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"{{USERNAME}}",
+						"api",
+						"characters"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201 Created",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Iron Man\",\n    \"alterego\": \"Tony Stark\",\n    \"description\": \"Genius billionaire\",\n    \"powers\": [\n        \"Armor\",\n        \"Flight\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear personaje (nombre duplicado)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Iron Man\",\n  \"alterego\": \"Otro\",\n  \"description\": \"Otro\",\n  \"powers\": [\"Armor\"]\n}"
+				},
+				"url": {
+					"raw": "http://bp-se-test-cabcd9b246a5.herokuapp.com/{{USERNAME}}/api/characters",
+					"protocol": "http",
+					"host": [
+						"bp-se-test-cabcd9b246a5",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"{{USERNAME}}",
+						"api",
+						"characters"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "400 Bad Request - Nombre duplicado",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": "{\n  \"error\": \"Character name already exists\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear personaje (faltan campos requeridos)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"\",\n  \"alterego\": \"\",\n  \"description\": \"\",\n  \"powers\": []\n}"
+				},
+				"url": {
+					"raw": "http://bp-se-test-cabcd9b246a5.herokuapp.com/{{USERNAME}}/api/characters",
+					"protocol": "http",
+					"host": [
+						"bp-se-test-cabcd9b246a5",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"{{USERNAME}}",
+						"api",
+						"characters"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "400 Bad Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": "{\n  \"name\": \"Name is required\",\n  \"alterego\": \"Alterego is required\",\n  \"description\": \"Description is required\",\n  \"powers\": \"Powers are required\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar personaje (exitoso)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Iron Man\",\n  \"alterego\": \"Tony Stark\",\n  \"description\": \"Updated description\",\n  \"powers\": [\"Armor\", \"Flight\"]\n}"
+				},
+				"url": {
+					"raw": "http://bp-se-test-cabcd9b246a5.herokuapp.com/{{USERNAME}}/api/characters/1",
+					"protocol": "http",
+					"host": [
+						"bp-se-test-cabcd9b246a5",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"{{USERNAME}}",
+						"api",
+						"characters",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": "{\n  \"id\": 1,\n  \"name\": \"Iron Man\",\n  \"alterego\": \"Tony Stark\",\n  \"description\": \"Updated description\",\n  \"powers\": [\"Armor\", \"Flight\"]\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar personaje (no existe)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Iron Man\",\n  \"alterego\": \"Tony Stark\",\n  \"description\": \"Updated description\",\n  \"powers\": [\"Armor\", \"Flight\"]\n}"
+				},
+				"url": {
+					"raw": "http://bp-se-test-cabcd9b246a5.herokuapp.com/{{USERNAME}}/api/characters/999",
+					"protocol": "http",
+					"host": [
+						"bp-se-test-cabcd9b246a5",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"{{USERNAME}}",
+						"api",
+						"characters",
+						"999"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "404 Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": "{\n  \"error\": \"Character not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar personaje (exitoso)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://bp-se-test-cabcd9b246a5.herokuapp.com/{{USERNAME}}/api/characters/1",
+					"protocol": "http",
+					"host": [
+						"bp-se-test-cabcd9b246a5",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"{{USERNAME}}",
+						"api",
+						"characters",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "204 No Content",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Eliminar personaje (no existe)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://bp-se-test-cabcd9b246a5.herokuapp.com/{{USERNAME}}/api/characters/999",
+					"protocol": "http",
+					"host": [
+						"bp-se-test-cabcd9b246a5",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"{{USERNAME}}",
+						"api",
+						"characters",
+						"999"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "404 Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": "{\n  \"error\": \"Character not found\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "USERNAME",
+			"value": "crcorona",
+			"type": "string"
+		}
+	]
+}
