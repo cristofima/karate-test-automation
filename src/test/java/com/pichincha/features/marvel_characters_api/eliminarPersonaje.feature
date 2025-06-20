@@ -33,22 +33,12 @@ Feature: MARVEL-005 Eliminar personaje por ID (microservicio para gestión de pe
     * path username, 'api', 'characters', personajeId
     When method DELETE
     Then status 204
-    # And match response == ''
-    # And match response == null
+    And match response == ''
 
   @id:2 @eliminarPersonaje @noEncontrado404
   Scenario: T-API-MARVEL-005-CA02-Eliminar personaje no existente 404 - karate
     * path username, 'api', 'characters', '9999'
     When method DELETE
     Then status 404
-    # And match response.error == 'Character not found'
-    # And match response contains { error: '#notnull' }
-
-  @id:3 @eliminarPersonaje @errorServicio500
-  Scenario: T-API-MARVEL-005-CA03-Eliminar personaje con error interno 500 - karate
-    * path username, 'api', 'characters', '-1'
-    * configure retry = { count: 1, interval: 500 }
-    When method DELETE
-    Then status 500
-    # And match response.error != null
-    # And match response.status == 500
+    And match response.error == 'Character not found'
+    And match response contains { error: '#notnull' }

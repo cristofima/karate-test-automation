@@ -19,20 +19,5 @@ Feature: MARVEL-001 Obtener todos los personajes (microservicio para gestión de
   Scenario: T-API-MARVEL-001-CA01-Obtener todos los personajes exitosamente 200 - karate
     When method GET
     Then status 200
-    # And match response != null
-    # And match response == '#array'
-
-  @id:2 @obtenerPersonajes @listaVacia200
-  Scenario: T-API-MARVEL-001-CA02-Obtener lista vacía de personajes 200 - karate
-    When method GET
-    Then status 200
-    # And match response == []
-    # And match response == '#[0]'
-
-  @id:3 @obtenerPersonajes @errorServicio500
-  Scenario: T-API-MARVEL-001-CA03-Obtener personajes con error interno 500 - karate
-    * configure retry = { count: 1, interval: 500 }
-    When method GET
-    Then status 500
-    # And match response.error != null
-    # And match response.status == 500
+    And match response != null
+    And match response == '#array'

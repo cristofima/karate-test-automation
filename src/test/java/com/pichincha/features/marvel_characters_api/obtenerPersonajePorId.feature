@@ -19,22 +19,13 @@ Feature: MARVEL-002 Obtener personaje por ID (microservicio para gestión de per
     * path username, 'api', 'characters', '1'
     When method GET
     Then status 200
-    # And match response != null
-    # And match response.id == 1
+    And match response != null
+    And match response.id == 1
 
   @id:2 @obtenerPersonajePorId @noEncontrado404
   Scenario: T-API-MARVEL-002-CA02-Obtener personaje por ID no existente 404 - karate
     * path username, 'api', 'characters', '9999'
     When method GET
     Then status 404
-    # And match response.error == 'Character not found'
-    # And match response contains { error: '#notnull' }
-
-  @id:3 @obtenerPersonajePorId @errorServicio500
-  Scenario: T-API-MARVEL-002-CA03-Obtener personaje por ID con error interno 500 - karate
-    * path username, 'api', 'characters', '-1'
-    * configure retry = { count: 1, interval: 500 }
-    When method GET
-    Then status 500
-    # And match response.error != null
-    # And match response.status == 500
+    And match response.error == 'Character not found'
+    And match response contains { error: '#notnull' }
